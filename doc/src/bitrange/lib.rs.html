@@ -167,6 +167,7 @@
 <span id="110">110</span>
 <span id="111">111</span>
 <span id="112">112</span>
+<span id="113">113</span>
 </pre><pre class="rust ">
 <span class="attribute">#![<span class="ident">deny</span>(<span class="ident">warnings</span>)]</span>
 <span class="attribute">#![<span class="ident">feature</span>(<span class="ident">proc_macro</span>)]</span>
@@ -181,7 +182,7 @@
 <span class="doccomment">///     Test: u8,               // the name of the struct and the size of the internal integer</span>
 <span class="doccomment">///     [aaa1_0bbb],            // the format of the bits in the internal integer</span>
 <span class="doccomment">///     a: first,               // map the bits that are marked as `a` to field `first`</span>
-<span class="doccomment">///     b: second set_second   // map the bits that are marked as `b` to field `second`</span>
+<span class="doccomment">///     b: second set_second    // map the bits that are marked as `b` to field `second`</span>
 <span class="doccomment">///                             // and create a setter `set_second` that sets a given value to `b`</span>
 <span class="doccomment">/// }</span>
 <span class="attribute">#[<span class="ident">macro_export</span>]</span>
@@ -237,6 +238,7 @@
     }
 }
 
+<span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
 <span class="attribute">#[<span class="ident">macro_export</span>]</span>
 <span class="macro">macro_rules</span><span class="macro">!</span> <span class="ident">bitrange_impl_field</span> {
     (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">struct_name</span>:<span class="ident">ident</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">struct_size</span>:<span class="ident">ty</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>:<span class="ident">tt</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">field_format</span>:<span class="ident">ident</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">field_get</span>:<span class="ident">ident</span>) <span class="op">=&gt;</span> {
