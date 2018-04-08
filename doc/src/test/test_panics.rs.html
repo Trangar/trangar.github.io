@@ -68,10 +68,30 @@
 <span id="11">11</span>
 <span id="12">12</span>
 <span id="13">13</span>
+<span id="14">14</span>
+<span id="15">15</span>
+<span id="16">16</span>
+<span id="17">17</span>
+<span id="18">18</span>
+<span id="19">19</span>
+<span id="20">20</span>
+<span id="21">21</span>
+<span id="22">22</span>
+<span id="23">23</span>
+<span id="24">24</span>
+<span id="25">25</span>
+<span id="26">26</span>
+<span id="27">27</span>
+<span id="28">28</span>
+<span id="29">29</span>
+<span id="30">30</span>
+<span id="31">31</span>
+<span id="32">32</span>
+<span id="33">33</span>
 </pre><pre class="rust ">
 <span class="attribute">#[<span class="ident">test</span>]</span>
-<span class="attribute">#[<span class="ident">should_panic</span>]</span>
-<span class="kw">fn</span> <span class="ident">test2</span>() {
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">not</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;panic&quot;</span>))]</span>
+<span class="kw">fn</span> <span class="ident">test_error</span>() {
     <span class="macro">bitrange</span><span class="macro">!</span> {
         <span class="ident">Test</span>: <span class="ident">u8</span>,
         [<span class="number">1111_111a</span>],
@@ -80,7 +100,27 @@
     <span class="comment">// Because the pattern is 1111_111</span>
     <span class="comment">// This means that all bits, except the last, should always be 1</span>
     <span class="comment">// Because `0` does not match this criteria, this function panics</span>
-    <span class="ident">Test</span>::<span class="ident">from</span>(<span class="number">0</span>);
+    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Err</span>(<span class="ident">e</span>) <span class="op">=</span> <span class="ident">Test</span>::<span class="ident">from</span>(<span class="number">0</span>) {
+        <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="number">0b1111_1110</span>, <span class="ident">e</span>.<span class="ident">expected</span>);
+        <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="number">0</span>, <span class="ident">e</span>.<span class="ident">provided</span>);
+    } <span class="kw">else</span> {
+        <span class="macro">panic</span><span class="macro">!</span>(<span class="string">&quot;Test should have failed but didn&#39;t&quot;</span>);
+    }
+}
+
+<span class="attribute">#[<span class="ident">test</span>]</span>
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;panic&quot;</span>)]</span>
+<span class="attribute">#[<span class="ident">should_panic</span>]</span>
+<span class="kw">fn</span> <span class="ident">test_panic</span>() {
+    <span class="macro">bitrange</span><span class="macro">!</span> {
+        <span class="ident">Test</span>: <span class="ident">u8</span>,
+        [<span class="number">1111_111a</span>],
+        <span class="ident">a</span>: <span class="ident">_first</span>
+    }
+    <span class="comment">// Because the pattern is 1111_111</span>
+    <span class="comment">// This means that all bits, except the last, should always be 1</span>
+    <span class="comment">// Because `0` does not match this criteria, this function panics</span>
+    <span class="kw">let</span> <span class="kw">_</span> <span class="op">=</span> <span class="ident">Test</span>::<span class="ident">from</span>(<span class="number">0</span>);
 }
 </pre>
 </section>

@@ -115,7 +115,7 @@
 
     <span class="attribute">#[<span class="ident">test</span>]</span>
     <span class="kw">fn</span> <span class="ident">test</span>() {
-        <span class="kw">let</span> <span class="ident">header</span> <span class="op">=</span> <span class="ident">IpHeader</span>::<span class="ident">from</span>(<span class="number">0b0001_0010_00000011_0000000000000100</span>);
+        <span class="kw">let</span> <span class="ident">header</span> <span class="op">=</span> <span class="ident">IpHeader</span>::<span class="ident">from</span>(<span class="number">0b0001_0010_00000011_0000000000000100</span>).<span class="ident">unwrap</span>();
         <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">header</span>.<span class="ident">version</span>(), <span class="number">0b0001</span>);
         <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">header</span>.<span class="ident">ihl</span>(), <span class="number">0b0010</span>);
         <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">header</span>.<span class="ident">type_of_service</span>(), <span class="number">0b0011</span>);
@@ -135,7 +135,7 @@
 
     <span class="attribute">#[<span class="ident">test</span>]</span>
     <span class="kw">fn</span> <span class="ident">test</span>() {
-        <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">header</span> <span class="op">=</span> <span class="ident">IpHeader</span>::<span class="ident">from</span>(<span class="number">0b0001_0010_00000011_0000000000000100</span>);
+        <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">header</span> <span class="op">=</span> <span class="ident">IpHeader</span>::<span class="ident">from</span>(<span class="number">0b0001_0010_00000011_0000000000000100</span>).<span class="ident">unwrap</span>();
         <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">header</span>.<span class="ident">version</span>(), <span class="number">0b0001</span>);
         <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">header</span>.<span class="ident">ihl</span>(), <span class="number">0b0010</span>);
         <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">header</span>.<span class="ident">type_of_service</span>(), <span class="number">0b0011</span>);

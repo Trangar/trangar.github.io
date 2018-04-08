@@ -59,34 +59,43 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../src/bitrange_plugin/lib.rs.html#1-96' title='goto source code'>[src]</a></span></h1><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+               </span><a class='srclink' href='../src/bitrange_plugin/lib.rs.html#1-117' title='goto source code'>[src]</a></span></h1><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
 <table>
                        <tr class=' module-item'>
                            <td><a class="fn" href="fn.proc_default_mask.html"
                                   title='fn bitrange_plugin::proc_default_mask'>proc_default_mask</a></td>
                            <td class='docblock-short'>
-                                
+                                <p>Return the default mask of a format
+This are all the fields that are set to either <code>0</code> or <code>1</code></p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
                            <td><a class="fn" href="fn.proc_default_value.html"
                                   title='fn bitrange_plugin::proc_default_value'>proc_default_value</a></td>
                            <td class='docblock-short'>
-                                
+                                <p>Returns the default value of a format
+This is a value with 1 for every <code>1</code> in the format</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
                            <td><a class="fn" href="fn.proc_mask.html"
                                   title='fn bitrange_plugin::proc_mask'>proc_mask</a></td>
                            <td class='docblock-short'>
-                                
+                                <p>Create a mask based on a given format and a character
+This will map all the bits that match the given character, to 1
+All other bits will be set to 0</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
                            <td><a class="fn" href="fn.proc_offset.html"
                                   title='fn bitrange_plugin::proc_offset'>proc_offset</a></td>
                            <td class='docblock-short'>
-                                
+                                <p>Return the offset of a given character in a format
+This is the amount of least-significant bits in the proc_mask that are 0</p>
+
                            </td>
                        </tr></table></section>
     <section id='search' class="content hidden"></section>

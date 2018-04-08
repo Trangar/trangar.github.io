@@ -1,1 +1,1 @@
-initSidebarItems({"macro":[["bitrange","Create a bitrange struct."]]});
+initSidebarItems({"macro":[["bitrange","Create a bitrange struct."]],"struct":[["Error",""]]});

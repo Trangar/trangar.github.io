@@ -59,7 +59,7 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../src/bitrange/lib.rs.html#18-68' title='goto source code'>[src]</a></span></h1><div class="docblock type-decl"><pre class="rust macro">
+               </span><a class='srclink' href='../src/bitrange/lib.rs.html#96-149' title='goto source code'>[src]</a></span></h1><div class="docblock type-decl"><pre class="rust macro">
 <span class="macro">macro_rules</span><span class="macro">!</span> <span class="ident">bitrange</span> {
     (
         <span class="macro-nonterminal">$</span><span class="macro-nonterminal">struct_name</span>:<span class="ident">ident</span>:
@@ -76,6 +76,10 @@
 </div><div class='docblock'><p>Create a bitrange struct.</p>
 
 <pre class="rust rust-example-rendered">
+<span class="attribute">#![<span class="ident">deny</span>(<span class="ident">warnings</span>)]</span>
+<span class="attribute">#![<span class="ident">feature</span>(<span class="ident">proc_macro</span>)]</span>
+<span class="attribute">#[<span class="ident">macro_use</span>]</span>
+<span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">bitrange</span>;
 <span class="macro">bitrange</span><span class="macro">!</span> {
     <span class="ident">Test</span>: <span class="ident">u8</span>,               <span class="comment">// the name of the struct and the size of the internal integer</span>
     [<span class="ident">aaa1_0bbb</span>],            <span class="comment">// the format of the bits in the internal integer</span>

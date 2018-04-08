@@ -59,7 +59,11 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../src/bitrange_plugin/lib.rs.html#37-50' title='goto source code'>[src]</a></span></h1><pre class='rust fn'>pub fn proc_offset(input: <a class="struct" href="https://doc.rust-lang.org/nightly/proc_macro/struct.TokenStream.html" title="struct proc_macro::TokenStream">TokenStream</a>) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/proc_macro/struct.TokenStream.html" title="struct proc_macro::TokenStream">TokenStream</a></pre></section>
+               </span><a class='srclink' href='../src/bitrange_plugin/lib.rs.html#48-61' title='goto source code'>[src]</a></span></h1><pre class='rust fn'>pub fn proc_offset(input: <a class="struct" href="https://doc.rust-lang.org/nightly/proc_macro/struct.TokenStream.html" title="struct proc_macro::TokenStream">TokenStream</a>) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/proc_macro/struct.TokenStream.html" title="struct proc_macro::TokenStream">TokenStream</a></pre><div class='docblock'><p>Return the offset of a given character in a format
+This is the amount of least-significant bits in the proc_mask that are 0</p>
+<p>usage:  <code>proc_offset([aaa0_1bbb], a);</code>
+output: <code>5</code> (0b1110_0000 has 5 least-significant bits that are 0)</p>
+</div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
